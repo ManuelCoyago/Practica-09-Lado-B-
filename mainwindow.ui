@@ -17,6 +17,33 @@
    <iconset>
     <normaloff>../../../../../Downloads/filtrar.png</normaloff>../../../../../Downloads/filtrar.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+}
+
+QLabel {
+  color: #f5f5f5;
+}
+
+QPushButton {
+  background-color: #007aff;
+  color: #f5f5f5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+QPushButton:hover {
+  background-color: #0059a6;
+}
+
+QPushButton:pressed {
+  background-color: #003d79;
+}
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
@@ -111,14 +138,21 @@
       <height>241</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;</string>
+    </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>280</y>
-      <width>291</width>
-      <height>26</height>
+      <width>320</width>
+      <height>34</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -132,20 +166,20 @@
      <item>
       <widget class="QPushButton" name="pushButton_3">
        <property name="text">
-        <string>proximamente</string>
+        <string>Abrir Archivo</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
-        <string>...</string>
+        <string>Guardar</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>101</x>
@@ -187,7 +221,7 @@
    </property>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
-     <string>proximamente...</string>
+     <string>Ayuda</string>
     </property>
     <addaction name="actionAcerca_del_programa"/>
    </widget>

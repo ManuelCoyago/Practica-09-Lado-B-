@@ -4,6 +4,7 @@
 #include "QMessageBox"
 #include "QFileDialog"
 #include "QDataStream"
+#include "acercadelprograma.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::FiltracionDatos_v001)
@@ -79,7 +80,6 @@ void MainWindow::on_pushButton_3_clicked()
 {
 
     QString filePath = QFileDialog::getOpenFileName(this, "Abrir Archivo", QString(), "Archivos Binarios (*.bin)");
-
     if (!filePath.isEmpty()) {
         QFile file(filePath);
         if (file.open(QIODevice::ReadOnly)) {
@@ -88,11 +88,22 @@ void MainWindow::on_pushButton_3_clicked()
             in >> data;
             file.close();
             ui->plainTextEdit->setPlainText(data);
-            QMessageBox::information(this, "Abrir Archivo", "Archivo abierto correctamente.");
+
+            QMessageBox messageBox(this);
+            messageBox.setWindowTitle("Abrir Archivo");
+            messageBox.setText("Archivo abierto correctamente.");
+            //por alguna razon si no pongo que la letra sea negra e mensaje salta con letras blancas ¿?
+            messageBox.setStyleSheet("QLabel { color: black; }");
+            messageBox.exec();
         } else {
             QMessageBox::warning(this, "Abrir Archivo", "No se pudo abrir el archivo para lectura.");
         }
     }
+}
+void MainWindow::on_actionAcerca_del_programa_triggered()
+{
+    AcercaDelPrograma ventana;
+    ventana.exec();
 }
 void MainWindow::on_pushButton_clicked()
 {
